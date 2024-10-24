@@ -161,7 +161,6 @@ const generateAccessAndRefreshTokens = async(userId) => {
     )
   })
 
-
 export {
     registerUser,
 }
