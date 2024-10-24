@@ -137,6 +137,8 @@ const generateAccessAndRefreshTokens = async(userId) => {
         throw new ApiError(401, "Invalid user credentials")
     }
 
+    const {accessToken, refreshToken} = await generateAccessAndRefreshTokens(user._id)
+
   })
 export {registerUser}
 
