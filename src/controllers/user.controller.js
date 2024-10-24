@@ -101,6 +101,25 @@ import {ApiResponse} from "../utils/ApiResponse.js"
     //access and refresh token 
     //send cookie
 
+    const {email,username,password} = req.body 
+
+    if(!username || !email){
+        throw new ApiError(400,"username or email is required")
+    }
+
+    const user = await User.findOne({
+        $or: [{username},{email}]
+    })
+
+    if(!user){
+        throw new ApiError(404, "User does not exist")
+    }
+
+    const isPasswordValid = await user.isPasswordCorrect(password)
+
+    if(!isPasswordValid){
+        throw new ApiError(401, "Invalid user credentials")
+    }
 
   })
 export {registerUser}
