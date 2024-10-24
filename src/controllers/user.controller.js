@@ -93,6 +93,16 @@ import {ApiResponse} from "../utils/ApiResponse.js"
   });
   
 
+  const loginUser = asyncHandler(async(req,res) => {
+    //req body -> data
+    //username or email
+    //find the user
+    //password check
+    //access and refresh token 
+    //send cookie
+
+
+  })
 export {registerUser}
 
 
