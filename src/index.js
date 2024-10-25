@@ -19,6 +19,7 @@
 import express from "express"
 const app = express()
 
+//immediate invoke function IIF
 (async () => {
     try{
         await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
