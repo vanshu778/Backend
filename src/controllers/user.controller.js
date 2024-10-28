@@ -124,7 +124,7 @@ const generateAccessAndRefreshTokens = async(userId) => {
     console.log(email);
     //here is an alternative of above code based on logic discussed:
     //if(!(username || email))
-    if(!username && !email){
+    if(!(username || email)){
         throw new ApiError(400,"username or email is required")
     }
 
